@@ -10,10 +10,11 @@
 #import "HomeViewController.h"
 #import "HTBookViewController.h"
 
+#define BTN_SIZE 70
 @interface HTEarthViewController ()
 
 @property (nonatomic,strong)UIImageView *petImageView;
-@property (nonatomic,strong)UIButton *earthBtn;
+@property (nonatomic,strong)UIImageView *earthImage;
 @property (nonatomic,strong)UIButton *toHomeBtn;
 @property (nonatomic,strong)UIButton *toBookBtn;
 
@@ -25,40 +26,49 @@
 {
     
     if (!_petImageView) {
-        _petImageView = [[UIImageView alloc]initWithFrame:CGRectMake(550, 240, 225, 200)];
+        _petImageView = [[UIImageView alloc]initWithFrame:CGRectMake(500, 220, 200, 200)];
         [_petImageView setImage:[UIImage imageNamed:@"HTE - pet.png"]];
         
     }
     return _petImageView;
 }
-- (UIButton *)earthBtn     //“3D”地球
+- (UIImageView *)earthImage     //“3D”地球
 {
-    if (!_earthBtn) {
-        _earthBtn = [[UIButton alloc]initWithFrame:CGRectMake(50, 10, 290, 290)];
-        [_earthBtn setImage:[UIImage imageNamed:@"HTE - earth.png"] forState:(UIControlStateNormal)];
-//        [_earthBtn addTarget:self action:@selector(bookBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    if (!_earthImage) {
+        _earthImage = [[UIImageView alloc]initWithFrame:CGRectMake(50, 20, 300, 300)];
+        [_earthImage setImage:[UIImage imageNamed:@"HTE - earth.png"]];
+        _earthImage.userInteractionEnabled = YES;
+        
+        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(200, 200, 40, 40)];
+//        CGRect rect = [btn convertRect:btn.frame toView:_earthImage];
+//        btn.frame = rect;
+        [btn addTarget:self action:@selector(questionClick) forControlEvents:UIControlEventTouchUpInside];
+        btn.backgroundColor = [UIColor blackColor];
+        [_earthImage addSubview:btn];
     }
-    return _earthBtn;
+    return _earthImage;
+}
+
+- (UIButton *)toBookBtn     //跳转到故事书
+{
+    if (!_toBookBtn) {
+        _toBookBtn = [[UIButton alloc]initWithFrame:CGRectMake(400, 40, BTN_SIZE, BTN_SIZE)];
+        [_toBookBtn setImage:[UIImage imageNamed:@"universal.toBook.png"] forState:(UIControlStateNormal)];
+        [_toBookBtn addTarget:self action:@selector(toBookBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _toBookBtn;
 }
 
 - (UIButton *)toHomeBtn     //跳转到小窝
 {
     if (!_toHomeBtn) {
-        _toHomeBtn = [[UIButton alloc]initWithFrame:CGRectMake(600, 40, 80, 100)];
-        [_toHomeBtn setImage:[UIImage imageNamed:@"universal.earthToHome.png"] forState:(UIControlStateNormal)];
+        _toHomeBtn = [[UIButton alloc]initWithFrame:CGRectMake(500, 40, BTN_SIZE, BTN_SIZE)];
+        [_toHomeBtn setImage:[UIImage imageNamed:@"universal.toHome.png"] forState:(UIControlStateNormal)];
         [_toHomeBtn addTarget:self action:@selector(toHomeBtnClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _toHomeBtn;
 }
-- (UIButton *)toBookBtn     //跳转到小窝
-{
-    if (!_toBookBtn) {
-        _toBookBtn = [[UIButton alloc]initWithFrame:CGRectMake(730, 40, 80, 100)];
-        [_toBookBtn setImage:[UIImage imageNamed:@"universal.backToBook.png"] forState:(UIControlStateNormal)];
-        [_toBookBtn addTarget:self action:@selector(toBookBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _toBookBtn;
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -69,17 +79,18 @@
     
     [self.view addSubview:bgImageView];
     [self.view addSubview:self.petImageView];
-    [self.view addSubview:self.earthBtn];
+    [self.view addSubview:self.earthImage];
     [self.view addSubview:self.toHomeBtn];
     [self.view addSubview:self.toBookBtn];
     
 }
 
+
+#pragma mark - 跳转
 - (void)toHomeBtnClick      //跳转回小窝
 {
-//    HomeViewController *homeViewController = [[HomeViewController alloc]init];
-//    [self presentViewController:homeViewController animated:YES completion:nil];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    HomeViewController *homeViewController = [[HomeViewController alloc]init];
+    [self presentViewController:homeViewController animated:YES completion:nil];
 }
 - (void)toBookBtnClick      //跳转回图书界面
 {
@@ -87,6 +98,12 @@
     [self presentViewController:bookViewController animated:YES completion:nil];
 }
 
+#pragma mark - 答题
+-(void)questionClick
+{
+        
+}
+    
 /*
 #pragma mark - Navigation
 

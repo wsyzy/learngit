@@ -1,8 +1,8 @@
 //
-//  HTB-floatView.h
+//  QueationViewController.h
 //  物语
 //
-//  Created by 叶子 on 2019/7/8.
+//  Created by 叶子 on 2019/7/14.
 //  Copyright © 2019 QAQ. All rights reserved.
 //
 
@@ -10,9 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HTB_floatView : UIView
-
-- (void)showFloatViewFromPoint:(CGPoint)point;
+@interface QueationViewController : UIViewController
 
 @end
 

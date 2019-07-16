@@ -1,0 +1,372 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F84D15A922D86F0D00E691EC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F84D15A822D86F0D00E691EC /* AppDelegate.m */; };
+		F84D15AF22D86F0D00E691EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84D15AD22D86F0D00E691EC /* Main.storyboard */; };
+		F84D15B122D86F2500E691EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F84D15B022D86F2500E691EC /* Assets.xcassets */; };
+		F84D15B422D86F2500E691EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F84D15B222D86F2500E691EC /* LaunchScreen.storyboard */; };
+		F84D15B722D86F2500E691EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F84D15B622D86F2500E691EC /* main.m */; };
+		F84D15BF22D8702700E691EC /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F84D15BE22D8702700E691EC /* HomeTableViewController.m */; };
+		F84D15C222D871D900E691EC /* StudentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F84D15C122D871D900E691EC /* StudentModel.m */; };
+		F84D15C822D8743000E691EC /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F84D15C722D8743000E691EC /* AddViewController.m */; };
+		F84D15CB22D87B6F00E691EC /* SQLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F84D15CA22D87B6F00E691EC /* SQLManager.m */; };
+		F84D15CE22D87F2D00E691EC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F84D15CD22D87F2D00E691EC /* libsqlite3.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F84D15A422D86F0D00E691EC /* 慕课网-SQLite的简单操作.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "慕课网-SQLite的简单操作.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F84D15A722D86F0D00E691EC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F84D15A822D86F0D00E691EC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F84D15AE22D86F0D00E691EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F84D15B022D86F2500E691EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F84D15B322D86F2500E691EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F84D15B522D86F2500E691EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F84D15B622D86F2500E691EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F84D15BD22D8702600E691EC /* HomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
+		F84D15BE22D8702700E691EC /* HomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
+		F84D15C022D871D900E691EC /* StudentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StudentModel.h; sourceTree = "<group>"; };
+		F84D15C122D871D900E691EC /* StudentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StudentModel.m; sourceTree = "<group>"; };
+		F84D15C622D8743000E691EC /* AddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		F84D15C722D8743000E691EC /* AddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		F84D15C922D87B6F00E691EC /* SQLManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SQLManager.h; sourceTree = "<group>"; };
+		F84D15CA22D87B6F00E691EC /* SQLManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SQLManager.m; sourceTree = "<group>"; };
+		F84D15CD22D87F2D00E691EC /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F84D15A122D86F0D00E691EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F84D15CE22D87F2D00E691EC /* libsqlite3.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F84D159B22D86F0D00E691EC = {
+			isa = PBXGroup;
+			children = (
+				F84D15A622D86F0D00E691EC /* 慕课网-SQLite的简单操作 */,
+				F84D15A522D86F0D00E691EC /* Products */,
+				F84D15CC22D87F2C00E691EC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F84D15A522D86F0D00E691EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F84D15A422D86F0D00E691EC /* 慕课网-SQLite的简单操作.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F84D15A622D86F0D00E691EC /* 慕课网-SQLite的简单操作 */ = {
+			isa = PBXGroup;
+			children = (
+				F84D15A722D86F0D00E691EC /* AppDelegate.h */,
+				F84D15A822D86F0D00E691EC /* AppDelegate.m */,
+				F84D15BD22D8702600E691EC /* HomeTableViewController.h */,
+				F84D15BE22D8702700E691EC /* HomeTableViewController.m */,
+				F84D15C022D871D900E691EC /* StudentModel.h */,
+				F84D15C122D871D900E691EC /* StudentModel.m */,
+				F84D15C622D8743000E691EC /* AddViewController.h */,
+				F84D15C722D8743000E691EC /* AddViewController.m */,
+				F84D15C922D87B6F00E691EC /* SQLManager.h */,
+				F84D15CA22D87B6F00E691EC /* SQLManager.m */,
+				F84D15AD22D86F0D00E691EC /* Main.storyboard */,
+				F84D15B022D86F2500E691EC /* Assets.xcassets */,
+				F84D15B222D86F2500E691EC /* LaunchScreen.storyboard */,
+				F84D15B522D86F2500E691EC /* Info.plist */,
+				F84D15B622D86F2500E691EC /* main.m */,
+			);
+			path = "慕课网-SQLite的简单操作";
+			sourceTree = "<group>";
+		};
+		F84D15CC22D87F2C00E691EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F84D15CD22D87F2D00E691EC /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F84D15A322D86F0D00E691EC /* 慕课网-SQLite的简单操作 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F84D15BA22D86F2500E691EC /* Build configuration list for PBXNativeTarget "慕课网-SQLite的简单操作" */;
+			buildPhases = (
+				F84D15A022D86F0D00E691EC /* Sources */,
+				F84D15A122D86F0D00E691EC /* Frameworks */,
+				F84D15A222D86F0D00E691EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "慕课网-SQLite的简单操作";
+			productName = "慕课网-SQLite的简单操作";
+			productReference = F84D15A422D86F0D00E691EC /* 慕课网-SQLite的简单操作.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F84D159C22D86F0D00E691EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "叶子";
+				TargetAttributes = {
+					F84D15A322D86F0D00E691EC = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = F84D159F22D86F0D00E691EC /* Build configuration list for PBXProject "慕课网-SQLite的简单操作" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F84D159B22D86F0D00E691EC;
+			productRefGroup = F84D15A522D86F0D00E691EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F84D15A322D86F0D00E691EC /* 慕课网-SQLite的简单操作 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F84D15A222D86F0D00E691EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F84D15B422D86F2500E691EC /* LaunchScreen.storyboard in Resources */,
+				F84D15B122D86F2500E691EC /* Assets.xcassets in Resources */,
+				F84D15AF22D86F0D00E691EC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F84D15A022D86F0D00E691EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F84D15CB22D87B6F00E691EC /* SQLManager.m in Sources */,
+				F84D15C822D8743000E691EC /* AddViewController.m in Sources */,
+				F84D15B722D86F2500E691EC /* main.m in Sources */,
+				F84D15C222D871D900E691EC /* StudentModel.m in Sources */,
+				F84D15BF22D8702700E691EC /* HomeTableViewController.m in Sources */,
+				F84D15A922D86F0D00E691EC /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F84D15AD22D86F0D00E691EC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F84D15AE22D86F0D00E691EC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F84D15B222D86F2500E691EC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F84D15B322D86F2500E691EC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F84D15B822D86F2500E691EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F84D15B922D86F2500E691EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F84D15BB22D86F2500E691EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VEPK8889X2;
+				INFOPLIST_FILE = "慕课网-SQLite的简单操作/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--.----SQLite-----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F84D15BC22D86F2500E691EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VEPK8889X2;
+				INFOPLIST_FILE = "慕课网-SQLite的简单操作/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "--.----SQLite-----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F84D159F22D86F0D00E691EC /* Build configuration list for PBXProject "慕课网-SQLite的简单操作" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F84D15B822D86F2500E691EC /* Debug */,
+				F84D15B922D86F2500E691EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F84D15BA22D86F2500E691EC /* Build configuration list for PBXNativeTarget "慕课网-SQLite的简单操作" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F84D15BB22D86F2500E691EC /* Debug */,
+				F84D15BC22D86F2500E691EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F84D159C22D86F0D00E691EC /* Project object */;
+}
