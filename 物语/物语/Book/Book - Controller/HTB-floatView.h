@@ -10,10 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HTB_floatView : UIViewController
+@interface HTB_floatView : UIView<UICollectionViewDelegate,UICollectionViewDataSource>
 
 - (void)showFloatViewFromPoint:(CGPoint)point;
-
+@property (nonatomic, weak, nullable) id <UICollectionViewDelegate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

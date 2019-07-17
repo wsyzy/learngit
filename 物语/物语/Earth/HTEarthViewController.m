@@ -9,6 +9,7 @@
 #import "HTEarthViewController.h"
 #import "HomeViewController.h"
 #import "HTBookViewController.h"
+#import "QueationViewController.h"
 
 #define BTN_SIZE 70
 @interface HTEarthViewController ()
@@ -26,7 +27,7 @@
 {
     
     if (!_petImageView) {
-        _petImageView = [[UIImageView alloc]initWithFrame:CGRectMake(500, 220, 200, 200)];
+        _petImageView = [[UIImageView alloc]initWithFrame:CGRectMake(450, 220, 200, 200)];
         [_petImageView setImage:[UIImage imageNamed:@"HTE - pet.png"]];
         
     }
@@ -35,7 +36,7 @@
 - (UIImageView *)earthImage     //“3D”地球
 {
     if (!_earthImage) {
-        _earthImage = [[UIImageView alloc]initWithFrame:CGRectMake(50, 20, 300, 300)];
+        _earthImage = [[UIImageView alloc]initWithFrame:CGRectMake(50, 20, 350, 350)];
         [_earthImage setImage:[UIImage imageNamed:@"HTE - earth.png"]];
         _earthImage.userInteractionEnabled = YES;
         
@@ -101,7 +102,8 @@
 #pragma mark - 答题
 -(void)questionClick
 {
-        
+    QueationViewController *questionCiewController = [[QueationViewController alloc]init];
+    [self presentViewController:questionCiewController animated:YES completion:nil];
 }
     
 /*

@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x7269;&#x8bed;/Book/HTBookViewController.m"
-            timestampString = "584974543.4022419"
+            filePath = "&#x7269;&#x8bed;/Book/Book - Controller/HTB-floatView.m"
+            timestampString = "585041209.613197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "-floatView"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-backgroundView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "&#x7269;&#x8bed;/Book/Book - Controller/HTB-floatView.m"
-            timestampString = "584974543.402398"
+            timestampString = "585041209.613641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-dismissView"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-initWithFrame:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -16,8 +16,11 @@
 #define Book_H 140   //书本高度
 #define Book_origin_x 150
 #define screenSize [UIScreen mainScreen].bounds.size
+#define Cell @"cellIdentifier"
 
-@interface HTBookViewController ()
+@interface HTBookViewController ()<UICollectionViewDelegate>
+
+@property (nonatomic,strong)HTB_floatView *floatView;
 
 @property (nonatomic,strong)UIButton *floatBtn;
 
@@ -33,6 +36,16 @@
 @end
 
 @implementation HTBookViewController
+
+#pragma mark - 浮窗
+- (HTB_floatView *)floatView
+{
+    if (!_floatView) {
+        _floatView = [[HTB_floatView alloc]init];
+        _floatView.delegate = self;
+    }
+    return _floatView;
+}
 
 #pragma  mark - 转场按钮
 - (UIButton *)floatBtn     //浮窗
@@ -106,6 +119,8 @@
     UIImageView *bgImageView = [[UIImageView alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     [bgImageView setImage:[UIImage imageNamed:@"HTBView.png"]];
     
+
+    
     [self.view addSubview:bgImageView];
     [self.view addSubview:self.floatBtn];
 
@@ -115,18 +130,16 @@
     [self.view addSubview:self.pictureBook1];
     [self.view addSubview:self.pictureBook2];
     [self.view addSubview:self.pictureBook3];
+    [self.view addSubview:self.floatView];
 }
 
 
 #pragma mark - 浮窗
 -(void)floatBtnClick
 {
-    HTB_floatView *floatView = [[HTB_floatView alloc]init];
-    
-    floatView.view.frame  = self.view.bounds;
+    _floatView.frame  = self.view.bounds;
     CGRect rect = [_floatBtn convertRect:_floatBtn.frame toView:nil];
-    [floatView showFloatViewFromPoint:rect.origin];
-    [self popoverPresentationController];
+    [_floatView showFloatViewFromPoint:rect.origin];
 }
 
 #pragma mark - 图书事件
@@ -139,17 +152,37 @@
 {
     NSLog(@"a picture shows");
 }
+
 -(void)lockedAlert
 {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"该图书还没有解锁哦！" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
     [alertController addAction:action];
     [self presentViewController:alertController animated:YES completion:nil];
-    
 }
 
 
+#pragma mark - collectionView
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"test");
+    HomeViewController *homeController = [[HomeViewController alloc]init];
+    HTEarthViewController *earthController = [[HTEarthViewController alloc]init];
+    switch (indexPath.item) {
+        case 1:
+            [self presentViewController:homeController animated:YES completion:nil];
+            break;
+        case 3:
+            break;
+            //        case 5:
+            //            [cell.contentView addSubview:photoImage];
+            //            break;
+            //        case 8:
+            //            [cell.contentView addSubview:backImage];
+            //            break;
+    }
+}
 
 
 /*

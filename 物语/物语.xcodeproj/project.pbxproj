@@ -20,6 +20,7 @@
 		50FE2092227C84F8009177DC /* __Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FE2091227C84F8009177DC /* __Tests.m */; };
 		50FE209D227C84F8009177DC /* __UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FE209C227C84F8009177DC /* __UITests.m */; };
 		F84D152622D3608300E691EC /* HTB-floatView.m in Sources */ = {isa = PBXBuildFile; fileRef = F84D152522D3608300E691EC /* HTB-floatView.m */; };
+		F84D15D322DB114E00E691EC /* QueationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F84D15D222DB114E00E691EC /* QueationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		50FE209E227C84F8009177DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F84D152422D3608300E691EC /* HTB-floatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HTB-floatView.h"; sourceTree = "<group>"; };
 		F84D152522D3608300E691EC /* HTB-floatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HTB-floatView.m"; sourceTree = "<group>"; };
+		F84D15D122DB114E00E691EC /* QueationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueationViewController.h; sourceTree = "<group>"; };
+		F84D15D222DB114E00E691EC /* QueationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QueationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,15 +118,11 @@
 		50FE2074227C84F7009177DC /* 物语 */ = {
 			isa = PBXGroup;
 			children = (
-				F84D152322D35FB700E691EC /* New Group1 */,
-				F84D152222D35F9A00E691EC /* Book-Controller */,
-				5009B5DC22913984009AD49A /* HomeViewController.h */,
-				5009B5DD22913984009AD49A /* HomeViewController.m */,
-				5009B6032292ADEE009AD49A /* HTTViewController.h */,
-				5009B6042292ADEE009AD49A /* HTTViewController.m */,
+				F84D15CF22DB109F00E691EC /* Earth */,
+				F84D152222D35F9A00E691EC /* Book */,
+				F84D15D522DB142500E691EC /* Home */,
+				F84D15D422DB140A00E691EC /* TV */,
 				50FE207B227C84F7009177DC /* Main.storyboard */,
-				5009B600229145AE009AD49A /* HTEarthViewController.h */,
-				5009B601229145AE009AD49A /* HTEarthViewController.m */,
 				50FE2075227C84F7009177DC /* AppDelegate.h */,
 				50FE2076227C84F7009177DC /* AppDelegate.m */,
 				50FE2081227C84F8009177DC /* Assets.xcassets */,
@@ -153,22 +152,60 @@
 			path = "物语UITests";
 			sourceTree = "<group>";
 		};
-		F84D152222D35F9A00E691EC /* Book-Controller */ = {
+		F84D152222D35F9A00E691EC /* Book */ = {
 			isa = PBXGroup;
 			children = (
+				F84D152322D35FB700E691EC /* Book - Controller */,
 				5009B6062292AF19009AD49A /* HTBookViewController.h */,
 				5009B6072292AF19009AD49A /* HTBookViewController.m */,
 			);
-			path = "Book-Controller";
+			path = Book;
 			sourceTree = "<group>";
 		};
-		F84D152322D35FB700E691EC /* New Group1 */ = {
+		F84D152322D35FB700E691EC /* Book - Controller */ = {
 			isa = PBXGroup;
 			children = (
 				F84D152422D3608300E691EC /* HTB-floatView.h */,
 				F84D152522D3608300E691EC /* HTB-floatView.m */,
 			);
-			path = "New Group1";
+			path = "Book - Controller";
+			sourceTree = "<group>";
+		};
+		F84D15CF22DB109F00E691EC /* Earth */ = {
+			isa = PBXGroup;
+			children = (
+				F84D15D022DB10C000E691EC /* New Group */,
+				5009B600229145AE009AD49A /* HTEarthViewController.h */,
+				5009B601229145AE009AD49A /* HTEarthViewController.m */,
+			);
+			path = Earth;
+			sourceTree = "<group>";
+		};
+		F84D15D022DB10C000E691EC /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				F84D15D122DB114E00E691EC /* QueationViewController.h */,
+				F84D15D222DB114E00E691EC /* QueationViewController.m */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		F84D15D422DB140A00E691EC /* TV */ = {
+			isa = PBXGroup;
+			children = (
+				5009B6032292ADEE009AD49A /* HTTViewController.h */,
+				5009B6042292ADEE009AD49A /* HTTViewController.m */,
+			);
+			path = TV;
+			sourceTree = "<group>";
+		};
+		F84D15D522DB142500E691EC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5009B5DC22913984009AD49A /* HomeViewController.h */,
+				5009B5DD22913984009AD49A /* HomeViewController.m */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +341,7 @@
 			files = (
 				5009B602229145AE009AD49A /* HTEarthViewController.m in Sources */,
 				50FE2080227C84F7009177DC /* __.xcdatamodeld in Sources */,
+				F84D15D322DB114E00E691EC /* QueationViewController.m in Sources */,
 				50FE2088227C84F8009177DC /* main.m in Sources */,
 				50FE2077227C84F7009177DC /* AppDelegate.m in Sources */,
 				5009B5DE22913984009AD49A /* HomeViewController.m in Sources */,
@@ -480,10 +518,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4G39X7FTP6;
+				DEVELOPMENT_TEAM = VEPK8889X2;
 				INFOPLIST_FILE = "物语/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -501,10 +541,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4G39X7FTP6;
+				DEVELOPMENT_TEAM = VEPK8889X2;
 				INFOPLIST_FILE = "物语/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
