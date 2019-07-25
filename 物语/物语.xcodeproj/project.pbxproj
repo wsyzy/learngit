@@ -19,6 +19,11 @@
 		50FE2088227C84F8009177DC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FE2087227C84F8009177DC /* main.m */; };
 		50FE2092227C84F8009177DC /* __Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FE2091227C84F8009177DC /* __Tests.m */; };
 		50FE209D227C84F8009177DC /* __UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FE209C227C84F8009177DC /* __UITests.m */; };
+		5E0F13AA22E6AD0400071486 /* IMG_0277.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5E912F0B22E463A2000F8611 /* IMG_0277.mp4 */; };
+		5E912F0A22E2EF4A000F8611 /* VideoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E912F0922E2EF4A000F8611 /* VideoPickerViewController.m */; };
+		5E95E64D22DF268C0052FB0F /* TakePhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E95E64C22DF268C0052FB0F /* TakePhotosViewController.m */; };
+		5ECEFC7F22E2AF0500040B6B /* StoryBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECEFC7E22E2AF0500040B6B /* StoryBookViewController.m */; };
+		5ECEFC8222E2B24A00040B6B /* contentImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECEFC8122E2B24A00040B6B /* contentImagesViewController.m */; };
 		F84D152622D3608300E691EC /* HTB-floatView.m in Sources */ = {isa = PBXBuildFile; fileRef = F84D152522D3608300E691EC /* HTB-floatView.m */; };
 		F84D15D322DB114E00E691EC /* QueationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F84D15D222DB114E00E691EC /* QueationViewController.m */; };
 /* End PBXBuildFile section */
@@ -64,6 +69,15 @@
 		50FE2098227C84F8009177DC /* 物语UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "物语UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FE209C227C84F8009177DC /* __UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __UITests.m; sourceTree = "<group>"; };
 		50FE209E227C84F8009177DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E912F0822E2EF4A000F8611 /* VideoPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoPickerViewController.h; sourceTree = "<group>"; };
+		5E912F0922E2EF4A000F8611 /* VideoPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPickerViewController.m; sourceTree = "<group>"; };
+		5E912F0B22E463A2000F8611 /* IMG_0277.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = IMG_0277.mp4; path = ../../../Downloads/IMG_0277.mp4; sourceTree = "<group>"; };
+		5E95E64B22DF268C0052FB0F /* TakePhotosViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TakePhotosViewController.h; sourceTree = "<group>"; };
+		5E95E64C22DF268C0052FB0F /* TakePhotosViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TakePhotosViewController.m; sourceTree = "<group>"; };
+		5ECEFC7D22E2AF0500040B6B /* StoryBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoryBookViewController.h; sourceTree = "<group>"; };
+		5ECEFC7E22E2AF0500040B6B /* StoryBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoryBookViewController.m; sourceTree = "<group>"; };
+		5ECEFC8022E2B24A00040B6B /* contentImagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = contentImagesViewController.h; sourceTree = "<group>"; };
+		5ECEFC8122E2B24A00040B6B /* contentImagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = contentImagesViewController.m; sourceTree = "<group>"; };
 		F84D152422D3608300E691EC /* HTB-floatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HTB-floatView.h"; sourceTree = "<group>"; };
 		F84D152522D3608300E691EC /* HTB-floatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HTB-floatView.m"; sourceTree = "<group>"; };
 		F84D15D122DB114E00E691EC /* QueationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueationViewController.h; sourceTree = "<group>"; };
@@ -98,6 +112,7 @@
 		50FE2069227C84F7009177DC = {
 			isa = PBXGroup;
 			children = (
+				5E912F0B22E463A2000F8611 /* IMG_0277.mp4 */,
 				50FE2074227C84F7009177DC /* 物语 */,
 				50FE2090227C84F8009177DC /* 物语Tests */,
 				50FE209B227C84F8009177DC /* 物语UITests */,
@@ -152,12 +167,24 @@
 			path = "物语UITests";
 			sourceTree = "<group>";
 		};
+		5E912F0722E2EA16000F8611 /* story&pictureBook */ = {
+			isa = PBXGroup;
+			children = (
+				5ECEFC7D22E2AF0500040B6B /* StoryBookViewController.h */,
+				5ECEFC7E22E2AF0500040B6B /* StoryBookViewController.m */,
+				5ECEFC8022E2B24A00040B6B /* contentImagesViewController.h */,
+				5ECEFC8122E2B24A00040B6B /* contentImagesViewController.m */,
+			);
+			path = "story&pictureBook";
+			sourceTree = "<group>";
+		};
 		F84D152222D35F9A00E691EC /* Book */ = {
 			isa = PBXGroup;
 			children = (
 				F84D152322D35FB700E691EC /* Book - Controller */,
-				5009B6062292AF19009AD49A /* HTBookViewController.h */,
 				5009B6072292AF19009AD49A /* HTBookViewController.m */,
+				5009B6062292AF19009AD49A /* HTBookViewController.h */,
+				5E912F0722E2EA16000F8611 /* story&pictureBook */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -167,6 +194,8 @@
 			children = (
 				F84D152422D3608300E691EC /* HTB-floatView.h */,
 				F84D152522D3608300E691EC /* HTB-floatView.m */,
+				5E95E64B22DF268C0052FB0F /* TakePhotosViewController.h */,
+				5E95E64C22DF268C0052FB0F /* TakePhotosViewController.m */,
 			);
 			path = "Book - Controller";
 			sourceTree = "<group>";
@@ -175,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				F84D15D022DB10C000E691EC /* New Group */,
+				5E912F0822E2EF4A000F8611 /* VideoPickerViewController.h */,
+				5E912F0922E2EF4A000F8611 /* VideoPickerViewController.m */,
 				5009B600229145AE009AD49A /* HTEarthViewController.h */,
 				5009B601229145AE009AD49A /* HTEarthViewController.m */,
 			);
@@ -312,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E0F13AA22E6AD0400071486 /* IMG_0277.mp4 in Resources */,
 				50FE2085227C84F8009177DC /* LaunchScreen.storyboard in Resources */,
 				50FE2082227C84F8009177DC /* Assets.xcassets in Resources */,
 				50FE207D227C84F7009177DC /* Main.storyboard in Resources */,
@@ -343,11 +375,15 @@
 				50FE2080227C84F7009177DC /* __.xcdatamodeld in Sources */,
 				F84D15D322DB114E00E691EC /* QueationViewController.m in Sources */,
 				50FE2088227C84F8009177DC /* main.m in Sources */,
+				5E95E64D22DF268C0052FB0F /* TakePhotosViewController.m in Sources */,
 				50FE2077227C84F7009177DC /* AppDelegate.m in Sources */,
 				5009B5DE22913984009AD49A /* HomeViewController.m in Sources */,
 				5009B6082292AF19009AD49A /* HTBookViewController.m in Sources */,
+				5E912F0A22E2EF4A000F8611 /* VideoPickerViewController.m in Sources */,
+				5ECEFC8222E2B24A00040B6B /* contentImagesViewController.m in Sources */,
 				F84D152622D3608300E691EC /* HTB-floatView.m in Sources */,
 				5009B6052292ADEE009AD49A /* HTTViewController.m in Sources */,
+				5ECEFC7F22E2AF0500040B6B /* StoryBookViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,17 +554,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VEPK8889X2;
 				INFOPLIST_FILE = "物语/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ziye.--";
+				PRODUCT_BUNDLE_IDENTIFIER = "com..--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "物语/物语-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -541,17 +576,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VEPK8889X2;
 				INFOPLIST_FILE = "物语/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ziye.--";
+				PRODUCT_BUNDLE_IDENTIFIER = "com..--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "物语/物语-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

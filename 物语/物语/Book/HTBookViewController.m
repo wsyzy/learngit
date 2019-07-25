@@ -10,6 +10,11 @@
 #import "HomeViewController.h"
 #import "HTEarthViewController.h"
 #import "HTB-floatView.h"
+#import "TakePhotosViewController.h"
+#import "StoryBookViewController.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AVKit/AVKit.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
 #define BTN_SIZE 50     //按钮大小
 #define Book_W 140   //书本宽度
@@ -18,12 +23,13 @@
 #define screenSize [UIScreen mainScreen].bounds.size
 #define Cell @"cellIdentifier"
 
-@interface HTBookViewController ()<UICollectionViewDelegate>
+@interface HTBookViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UIImagePickerControllerDelegate>
 
 @property (nonatomic,strong)HTB_floatView *floatView;
+@property (nonatomic,strong)TakePhotosViewController *takePhotosController;
+
 
 @property (nonatomic,strong)UIButton *floatBtn;
-
 
 @property (nonatomic,strong)UIButton *StoryBook1;
 @property (nonatomic,strong)UIButton *StoryBook2;
@@ -37,15 +43,7 @@
 
 @implementation HTBookViewController
 
-#pragma mark - 浮窗
-- (HTB_floatView *)floatView
-{
-    if (!_floatView) {
-        _floatView = [[HTB_floatView alloc]init];
-        _floatView.delegate = self;
-    }
-    return _floatView;
-}
+
 
 #pragma  mark - 转场按钮
 - (UIButton *)floatBtn     //浮窗
@@ -103,7 +101,7 @@
     }
     return _pictureBook2;
 }
-- (UIButton *)pictureBook3     //跳转到拍照识别
+- (UIButton *)pictureBook3     
 {
     if (!_pictureBook3) {
         _pictureBook3 = [[UIButton alloc]initWithFrame:CGRectMake(Book_origin_x + Book_W*2, BTN_SIZE*2 + Book_H, Book_W, Book_H)];
@@ -130,14 +128,16 @@
     [self.view addSubview:self.pictureBook1];
     [self.view addSubview:self.pictureBook2];
     [self.view addSubview:self.pictureBook3];
-    [self.view addSubview:self.floatView];
 }
 
 
 #pragma mark - 浮窗
 -(void)floatBtnClick
 {
-    _floatView.frame  = self.view.bounds;
+    _floatView = [[HTB_floatView alloc]init];
+    _floatView.delegate = self;
+    _floatView.dataSource = self;
+    _floatView.view.frame  = self.view.bounds;
     CGRect rect = [_floatBtn convertRect:_floatBtn.frame toView:nil];
     [_floatView showFloatViewFromPoint:rect.origin];
 }
@@ -145,7 +145,8 @@
 #pragma mark - 图书事件
 -(void)toStory
 {
-    NSLog(@"a story shows");
+    StoryBookViewController *storyBookController = [[StoryBookViewController alloc]init];
+    [self presentViewController:storyBookController animated:YES completion:nil];
 }
 
 -(void)toPicture
@@ -162,39 +163,126 @@
 }
 
 
-#pragma mark - collectionView
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 9;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:Cell forIndexPath:indexPath];
+    if (!cell) {
+        cell = [[UICollectionViewCell alloc]init];
+    }
+    UIImageView *homeImage = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 70, 70)];
+    [homeImage setImage:[UIImage imageNamed:@"universal.toHome.png"]];
+    
+    UIImageView *earthImage = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 70, 70)];
+    [earthImage setImage:[UIImage imageNamed:@"universal.toEarth.png"]];
+    
+    UIImageView *photoImage = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 70, 70)];
+    [photoImage setImage:[UIImage imageNamed:@"universal.toPhoto.png"]];
+    
+    UIImageView *backImage = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 70, 70)];
+    [backImage setImage:[UIImage imageNamed:@"universal.back.png"]];
+    
+    switch (indexPath.item) {
+        case 1:
+            [cell.contentView addSubview:homeImage];
+            break;
+        case 3:
+            [cell.contentView addSubview:earthImage];
+            break;
+        case 5:
+            [cell.contentView addSubview:photoImage];
+            break;
+        case 7:
+            [cell.contentView addSubview:backImage];
+            break;
+    }
+    return cell;
+}
+
+#pragma mark - collectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"test");
     HomeViewController *homeController = [[HomeViewController alloc]init];
     HTEarthViewController *earthController = [[HTEarthViewController alloc]init];
+   
     switch (indexPath.item) {
         case 1:
+            [self.floatView dismissView];
             [self presentViewController:homeController animated:YES completion:nil];
             break;
         case 3:
+            [self.floatView dismissView];
+            [self presentViewController:earthController animated:YES completion:nil];
             break;
-            //        case 5:
-            //            [cell.contentView addSubview:photoImage];
-            //            break;
-            //        case 8:
-            //            [cell.contentView addSubview:backImage];
-            //            break;
+       case 5:
+            _takePhotosController = [[TakePhotosViewController alloc]init];
+            _takePhotosController.delegate = self;
+            [self.floatView dismissView];
+            [self alertAtionSheet];
+            break;
+        case 7:
+            [self.floatView dismissView];
+           break;
     }
 }
 
+#pragma mark - 拍照
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)alertAtionSheet
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"选择图片来源" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            NSLog(@"可以通过摄像头来采集");
+            self.takePhotosController.imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        }
+        [self presentViewController:self.takePhotosController.imagePickerController animated:YES completion:nil];
+    }];
+    
+    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+            NSLog(@"可以通过相册来采集");
+            self.takePhotosController.imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        [self presentViewController:self.takePhotosController.imagePickerController animated:YES completion:nil];
+    }];
+    UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"dismiss");
+    }];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        [alertController addAction:action1];
+    }
+    [alertController addAction:action2];
+    [alertController addAction:action3];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
-*/
 
-
-
+//完成采集图片后的处理
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> *)info;
+{
+    //从info里获取媒体类型
+    NSString *type = info[UIImagePickerControllerMediaType];
+    //如果是图片类型
+    if ([type isEqualToString:(__bridge NSString*)kUTTypeImage]) {
+        //从info里获取图片
+        UIImage *image = info[UIImagePickerControllerOriginalImage];
+        //显示图片
+        self.takePhotosController.imageView.image = image;
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self presentViewController:self.takePhotosController animated:YES completion:nil];
+}
+//取消采集图片
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    NSLog(@"取消采集图片");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

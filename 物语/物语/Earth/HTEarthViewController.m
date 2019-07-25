@@ -10,6 +10,7 @@
 #import "HomeViewController.h"
 #import "HTBookViewController.h"
 #import "QueationViewController.h"
+#import "VideoPickerViewController.h"
 
 #define BTN_SIZE 70
 @interface HTEarthViewController ()
@@ -102,8 +103,8 @@
 #pragma mark - 答题
 -(void)questionClick
 {
-    QueationViewController *questionCiewController = [[QueationViewController alloc]init];
-    [self presentViewController:questionCiewController animated:YES completion:nil];
+    VideoPickerViewController *videoCV = [[VideoPickerViewController alloc]init];
+    [self presentViewController:videoCV animated:YES completion:nil];
 }
     
 /*

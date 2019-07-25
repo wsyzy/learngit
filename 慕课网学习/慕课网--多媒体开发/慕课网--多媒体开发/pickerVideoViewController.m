@@ -16,10 +16,12 @@
     //将视频路径定义为成员变量
     NSURL *mediaURL;
 }
+
 //采集视频
 @property (nonatomic,strong)UIImagePickerController *picker;
 //播放视频
 @property (nonatomic,strong)AVPlayerViewController *playerController;
+
 @end
 
 @implementation pickerVideoViewController
@@ -35,7 +37,7 @@
         //媒体类型
         _picker.mediaTypes = [NSArray arrayWithObject:(__bridge NSString *)kUTTypeMovie];
         
-        //视频播放质量
+        //内置摄像头录制的动画的视频质量设置
         _picker.videoQuality = AVAudioQualityHigh;
         
         //设置代理
@@ -57,7 +59,7 @@
         //1.全屏大小
 //        [self presentViewController:self.playerController animated:YES completion:nil];
         //2.小屏播放
-        self.picker.view.frame = CGRectMake(20, 20, 400, 400);
+//        self.picker.view.frame = CGRectMake(20, 20, 400, 400);
         [self.view addSubview:self.playerController.view];
     }
     return _playerController;
