@@ -33,6 +33,7 @@
     [self.view addSubview:self.backBtn];
 }
 
+//返回按钮
 - (void)backBtnClick
 {
     [self dismissViewControllerAnimated:YES completion:nil];
