@@ -11,34 +11,39 @@
 
 @interface StoryBookViewController ()
 
-@property (nonatomic,strong)UIButton *backBtn;
+@property (nonatomic,strong)UIImageView *backBtn;  //返回键
 
 @end
 
 @implementation StoryBookViewController
 
--(UIButton *)backBtn
+-(UIImageView *)backBtn
 {
     if (!_backBtn) {
-        _backBtn = [[UIButton alloc]initWithFrame:CGRectMake(40, 40, 50, 50)];
-        [_backBtn.imageView setImage:[UIImage imageNamed:@"universal.back.png"]];
-        [_backBtn addTarget:self action:@selector(dismissView) forControlEvents:UIControlEventTouchUpInside];
-        _backBtn.backgroundColor =[UIColor redColor];
+        _backBtn = [[UIImageView alloc]initWithFrame:CGRectMake(40, 40, 50, 50)];
+        _backBtn.image  = [UIImage imageNamed:@"universal.back.png"];
+        UITapGestureRecognizer *tapToBack = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(_backToShelf)];
+        [_backBtn addGestureRecognizer:tapToBack];
     }
     return _backBtn;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self.view bringSubviewToFront:_backBtn];
-    //创建数据源
+    
+    //添加返回按钮
+    [self.view addSubview:_backBtn];
+    
+    //创建图书数据源
     _dataArray = [NSMutableArray array];
+    
+    //设置4页 2面
     contentImagesViewController *imageVC1 = [[contentImagesViewController alloc]init];
     imageVC1.image = [UIImage imageNamed:@"bookBG-left"];
-    [imageVC1.view bringSubviewToFront:_backBtn];
+   
     contentImagesViewController *imageVC2 = [[contentImagesViewController alloc]init];
     imageVC2.image = [UIImage imageNamed:@"bookBG-right"];
+    
     contentImagesViewController *imageVC3 = [[contentImagesViewController alloc]init];
     imageVC3.image = [UIImage imageNamed:@"bookBG-left"];
     contentImagesViewController *imageVC4 = [[contentImagesViewController alloc]init];
@@ -48,14 +53,18 @@
     [_dataArray addObject:imageVC3];
     [_dataArray addObject:imageVC4];
     
+    //设置返回键一直在图书的最上层
+    [self.view bringSubviewToFront:_backBtn];
     
-    //设置第三个参数
+//设置第三个参数，传入的是对UIPageViewController的一些配置组成的字典, 这个key只有在style是翻书效果UIPageViewControllerTransitionStylePageCurl的时候才有作用, 它定义的是书脊的位置,值对应着UIPageViewControllerSpineLocation这个枚举项
+    
+    //设置书脊居中，双页显示
     NSDictionary *options =[NSDictionary dictionaryWithObject:[NSNumber numberWithInteger:UIPageViewControllerSpineLocationMid] forKey: UIPageViewControllerOptionSpineLocationKey];
     
-    //初始化UIPageViewController
+    //初始化UIPageViewController，设置为翻页效果和横屏
     _pageViewController = [[UIPageViewController alloc]initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:options];
     
-    //指定代理
+    //指定数据、样式代理
     _pageViewController.dataSource = self;
     _pageViewController.delegate = self;
     
@@ -66,6 +75,7 @@
     _pageViewController.doubleSided = YES;
     
     self.view.clipsToBounds = YES;
+    
     //设置首页显示数据
     contentImagesViewController *imageViewController1 = [self createImage:0];
     contentImagesViewController *imageViewController2 = [self createImage:1];
@@ -74,20 +84,20 @@
     [_pageViewController setViewControllers:array direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
     self.view.clipsToBounds = YES;
+    
     //添加pageViewController到Controller
     [self addChildViewController:_pageViewController];
     [self.view addSubview:_pageViewController.view];
     [self.view bringSubviewToFront:_backBtn];
 }
 
-
-
--(void)dismissView
+//退场
+-(void)_backToShelf
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-//获取指定显示的controller
+//获取指定显示的 controller
 -(contentImagesViewController *)createImage:(NSInteger)integer
 {
     return [_dataArray objectAtIndex:integer];
@@ -100,19 +110,18 @@
 }
 
 #pragma mark - UIPageViewControllerDataSource
-
-//显示前一页
+// 返回前一个页面,如果返回为nil,那么UIPageViewController就会认为当前页面是第一个页面不可以向前滚动或翻页
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
     NSInteger integer =  [self integerWithController:(contentImagesViewController *)viewController];
+    integer--;
     if(integer == 0 || integer == NSNotFound){
         return nil;
     }
-    integer--;
     return [self createImage:integer];
 }
 
-//显示后一页
+//下一个页面,返回为nil,那么UIPageViewController就会认为当前页面是最后一个页面不可以向后滚动或翻页
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
     NSInteger integer = [self integerWithController:(contentImagesViewController *)viewController];
@@ -140,8 +149,7 @@
 
 #pragma mark - UIPageViewControllerDelegate
 
-
-//设置PUIPageViewController的方向
+//设置UIPageViewController的方向
 - (UIInterfaceOrientationMask)pageViewControllerSupportedInterfaceOrientations:(UIPageViewController *)pageViewController
 {
     return UIInterfaceOrientationMaskLandscape;

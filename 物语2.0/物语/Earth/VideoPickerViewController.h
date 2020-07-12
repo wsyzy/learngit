@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VideoPickerViewController : UIViewController
 
+#pragma mark - 公共方法,设置图片占位符和视频url
+-(void)layoutWithVideoCoverUrl:(NSString *)videoCoverUrl videoUrl:(NSString *)videoUrl;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -13,7 +13,6 @@
 		5009B6082292AF19009AD49A /* HTBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5009B6072292AF19009AD49A /* HTBookViewController.m */; };
 		507A2BB124A496CA00425721 /* HTGiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 507A2BB024A496CA00425721 /* HTGiftViewController.m */; };
 		50FE2077227C84F7009177DC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FE2076227C84F7009177DC /* AppDelegate.m */; };
-		50FE207D227C84F7009177DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50FE207B227C84F7009177DC /* Main.storyboard */; };
 		50FE2080227C84F7009177DC /* __.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50FE207E227C84F7009177DC /* __.xcdatamodeld */; };
 		50FE2082227C84F8009177DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50FE2081227C84F8009177DC /* Assets.xcassets */; };
 		50FE2085227C84F8009177DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50FE2083227C84F8009177DC /* LaunchScreen.storyboard */; };
@@ -59,7 +58,6 @@
 		50FE2072227C84F7009177DC /* 物语.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "物语.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50FE2075227C84F7009177DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		50FE2076227C84F7009177DC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		50FE207C227C84F7009177DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50FE207F227C84F7009177DC /* __.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = __.xcdatamodel; sourceTree = "<group>"; };
 		50FE2081227C84F8009177DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50FE2084227C84F8009177DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -117,12 +115,12 @@
 				507A2BB024A496CA00425721 /* HTGiftViewController.m */,
 			);
 			name = Gift;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		50FE2069227C84F7009177DC = {
 			isa = PBXGroup;
 			children = (
-				507A2BB524A499EC00425721 /* Gift */,
 				50FE2074227C84F7009177DC /* 物语 */,
 				50FE2090227C84F8009177DC /* 物语Tests */,
 				50FE209B227C84F8009177DC /* 物语UITests */,
@@ -143,11 +141,11 @@
 		50FE2074227C84F7009177DC /* 物语 */ = {
 			isa = PBXGroup;
 			children = (
+				507A2BB524A499EC00425721 /* Gift */,
 				F84D15CF22DB109F00E691EC /* Earth */,
 				F84D152222D35F9A00E691EC /* Book */,
 				F84D15D522DB142500E691EC /* Home */,
 				F84D15D422DB140A00E691EC /* TV */,
-				50FE207B227C84F7009177DC /* Main.storyboard */,
 				50FE2075227C84F7009177DC /* AppDelegate.h */,
 				50FE2076227C84F7009177DC /* AppDelegate.m */,
 				50FE2081227C84F8009177DC /* Assets.xcassets */,
@@ -355,7 +353,6 @@
 			files = (
 				50FE2085227C84F8009177DC /* LaunchScreen.storyboard in Resources */,
 				50FE2082227C84F8009177DC /* Assets.xcassets in Resources */,
-				50FE207D227C84F7009177DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,14 +426,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		50FE207B227C84F7009177DC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				50FE207C227C84F7009177DC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		50FE2083227C84F8009177DC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

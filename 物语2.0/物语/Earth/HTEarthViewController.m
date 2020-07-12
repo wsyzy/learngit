@@ -4,7 +4,7 @@
 //
 //  Created by QAQ on 2019/5/19.
 //  Copyright © 2019 QAQ. All rights reserved.
-//
+// 地球回答问题界面
 
 #import "HTEarthViewController.h"
 #import "HomeViewController.h"
@@ -13,10 +13,12 @@
 #import "VideoPickerViewController.h"
 
 #define BTN_SIZE 70
+
 @interface HTEarthViewController ()
 
-@property (nonatomic,strong)UIImageView *petImageView;
-@property (nonatomic,strong)UIImageView *earthImage;
+@property (nonatomic,strong,readwrite)UIImageView *petImageView;
+@property (nonatomic,strong,readwrite)UIImageView *earthImage;
+@property (nonatomic,strong,readwrite)UIImageView *questionLoc;
 @property (nonatomic,strong)UIButton *toHomeBtn;
 @property (nonatomic,strong)UIButton *toBookBtn;
 
@@ -24,7 +26,7 @@
 
 @implementation HTEarthViewController
 
-- (UIImageView *)petImageView
+- (UIImageView *)petImageView   //宠物图片
 {
     
     if (!_petImageView) {
@@ -33,22 +35,6 @@
         
     }
     return _petImageView;
-}
-- (UIImageView *)earthImage     //“3D”地球
-{
-    if (!_earthImage) {
-        _earthImage = [[UIImageView alloc]initWithFrame:CGRectMake(50, 20, 350, 350)];
-        [_earthImage setImage:[UIImage imageNamed:@"HTE - earth.png"]];
-        _earthImage.userInteractionEnabled = YES;
-        
-        UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(200, 200, 40, 40)];
-//        CGRect rect = [btn convertRect:btn.frame toView:_earthImage];
-//        btn.frame = rect;
-        [btn addTarget:self action:@selector(questionClick) forControlEvents:UIControlEventTouchUpInside];
-        btn.backgroundColor = [UIColor blackColor];
-        [_earthImage addSubview:btn];
-    }
-    return _earthImage;
 }
 
 - (UIButton *)toBookBtn     //跳转到故事书
@@ -77,7 +63,24 @@
     UIImageView *bgImageView = [[UIImageView alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     [bgImageView setImage:[UIImage imageNamed:@"HTEView.png"]];
     
-    NSLog(@"width: %f ; hight: %f",[[UIScreen mainScreen]bounds].size.width,[[UIScreen mainScreen]bounds].size.height);
+//    NSLog(@"width: %f ; hight: %f",[[UIScreen mainScreen]bounds].size.width,[[UIScreen mainScreen]bounds].size.height);
+    
+    [self.view addSubview:({
+        _earthImage = [[UIImageView alloc]initWithFrame:CGRectMake(50, 20, 350, 350)];
+        [_earthImage setImage:[UIImage imageNamed:@"HTE - earth.png"]];
+        _earthImage.userInteractionEnabled = YES;
+        _earthImage;
+    })];
+    
+    [_earthImage addSubview:({
+        _questionLoc = [[UIImageView alloc]initWithFrame:CGRectMake(200, 200, 40, 40)];
+        [_questionLoc setImage:[UIImage imageNamed:@"lock"]];
+        _questionLoc.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapToQuestion = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(questionClick)];
+        [_questionLoc addGestureRecognizer:tapToQuestion];
+        _questionLoc;
+    })];
+    
     
     [self.view addSubview:bgImageView];
     [self.view addSubview:self.petImageView];
@@ -104,6 +107,8 @@
 -(void)questionClick
 {
     VideoPickerViewController *videoCV = [[VideoPickerViewController alloc]init];
+    //视频播放图片占位图和视频播放链接
+    [videoCV layoutWithVideoCoverUrl:@"videoCover" videoUrl:@"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"];
     [self presentViewController:videoCV animated:YES completion:nil];
 }
     

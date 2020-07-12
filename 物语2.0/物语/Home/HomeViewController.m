@@ -11,6 +11,7 @@
 #import "HTEarthViewController.h"
 #import "HTTViewController.h"
 #import "HTBookViewController.h"
+#import "HTGiftViewController.h"
 
 @interface HomeViewController ()
 
@@ -125,8 +126,8 @@
 }
 - (void)giftBtnClick       //图书跳转
 {
-        HTBookViewController *bookViewController = [[HTBookViewController alloc]init];
-        [self presentViewController:bookViewController animated:YES completion:nil];
+        HTGiftViewController *giftViewController = [[HTGiftViewController alloc]init];
+        [self presentViewController:giftViewController animated:YES completion:nil];
 }
 
 /*
